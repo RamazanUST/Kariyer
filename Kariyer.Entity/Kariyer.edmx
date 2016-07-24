@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KariyerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KULLANICI_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CV_BASLIK" Type="nvarchar" MaxLength="250" />
+          <Property Name="AD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SOYAD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="E_POSTA" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MESLEK" Type="nvarchar" MaxLength="200" />
+          <Property Name="IS_DURUM" Type="tinyint" />
+          <Property Name="DIGER_EPOSTA" Type="nvarchar" MaxLength="20" />
+          <Property Name="TC_KIMLIK" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="DOGUM_TARIH" Type="datetime" Nullable="false" />
+          <Property Name="FOTOGRAF" Type="nvarchar" MaxLength="50" />
+          <Property Name="UYRUK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CINSIYET" Type="tinyint" Nullable="false" />
+          <Property Name="ULKE" Type="uniqueidentifier" />
+          <Property Name="SEHIR" Type="uniqueidentifier" />
+          <Property Name="ADRES" Type="nvarchar" MaxLength="500" />
+          <Property Name="CEP_TEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIGER_CEP" Type="nvarchar" MaxLength="20" />
+          <Property Name="EV_TEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="IS_TEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="DAHILI" Type="nvarchar" MaxLength="5" />
+          <Property Name="DOGUM_YER" Type="nvarchar" MaxLength="100" />
+          <Property Name="MEDENI_DURUM" Type="tinyint" Nullable="false" />
+          <Property Name="ASKERLIK_DURUM" Type="tinyint" />
+          <Property Name="TERHIS_TARIH" Type="datetime" />
+          <Property Name="UYE_TOPLULUKLAR" Type="nvarchar" MaxLength="500" />
+          <Property Name="SIGARA" Type="bit" />
+          <Property Name="SEYEHAT_DURUM" Type="nvarchar" MaxLength="50" />
+          <Property Name="EHLIYET" Type="nvarchar" MaxLength="20" />
+          <Property Name="HOBILER" Type="nvarchar" MaxLength="500" />
+          <Property Name="FACEBOOK" Type="nvarchar" MaxLength="100" />
+          <Property Name="LINKEDIN" Type="nvarchar" MaxLength="100" />
+          <Property Name="TWITTER" Type="nvarchar" MaxLength="100" />
+          <Property Name="GOOGLEPLUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="DEGISTIREN" Type="nvarchar" MaxLength="100" />
+          <Property Name="DEGISTIRME_TARIH" Type="datetime" />
+          <Property Name="OLUSTURAN" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="OLUSTURMA_TARIH" Type="datetime" Nullable="false" />
+          <Property Name="SILINDI" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CV_EGITIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CV_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EGITIM_DURUM" Type="tinyint" Nullable="false" />
+          <Property Name="EGITIM_DURUM_TIP" Type="tinyint" Nullable="false" />
+          <Property Name="OKUL" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BOLUM" Type="nvarchar" MaxLength="100" />
+          <Property Name="OGRETIM_DIL" Type="nvarchar" MaxLength="30" />
+          <Property Name="EGITIM_TIP" Type="tinyint" />
+          <Property Name="ULKE_AD" Type="nvarchar" MaxLength="50" />
+          <Property Name="BASLANGIC_TARIH" Type="datetime" Nullable="false" />
+          <Property Name="BITIS_TARIH" Type="datetime" />
+          <Property Name="YAN_ANADAL" Type="bit" />
+          <Property Name="CIFT_ANADAL" Type="bit" />
+          <Property Name="DIGER_BOLUM" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CV_KARIYER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CV_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FIRMA" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="POZISYON" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FIRMA_YER" Type="nvarchar" MaxLength="100" />
+          <Property Name="SEKTOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="CALISMA_TIP" Type="tinyint" Nullable="false" />
+          <Property Name="CALISMA_DURUM" Type="tinyint" Nullable="false" />
+          <Property Name="BASLANGIC" Type="datetime" Nullable="false" />
+          <Property Name="BITIS" Type="datetime" />
+          <Property Name="AYRILMA_NEDEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="DENEYIM" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="CV_NITELIK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CV_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NITELIK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SEVIYE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="YIL" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="CV_REFERANS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CV_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="REFERANS_TIP" Type="tinyint" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FIRMA" Type="nvarchar" MaxLength="100" />
+          <Property Name="POZISYON" Type="nvarchar" MaxLength="100" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="E_POSTA" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FIRMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FIRMA_AD" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TELEFON_1" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TELEFON_2" Type="nvarchar" MaxLength="20" />
+          <Property Name="E_POSTA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIGER_E_POSTA" Type="nchar" MaxLength="50" />
+          <Property Name="DEGISTIRILME_TARIH" Type="datetime" />
+          <Property Name="DEGISTIREN" Type="nvarchar" MaxLength="100" />
+          <Property Name="OLUSTURULMA_TARIH" Type="datetime" Nullable="false" />
+          <Property Name="OLUSTURAN" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SILINDI" Type="bit" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FIRMA_ID" Type="uniqueidentifier" />
+          <Property Name="AD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SOYAD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="E_POSTA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAROLA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TEKNIK_KULLANICI" Type="bit" Nullable="false" />
+          <Property Name="FIRMAMI" Type="bit" Nullable="false" />
+          <Property Name="AKTIF" Type="bit" Nullable="false" />
+          <Property Name="SILINDI" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CV_EGITIM_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_EGITIM" Type="Self.CV_EGITIM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_EGITIM">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_KARIYER_CV_KARIYER">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_KARIYER" Type="Self.CV_KARIYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_KARIYER">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_NITELIK_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_NITELIK" Type="Self.CV_NITELIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_NITELIK">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_REFERANS_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_REFERANS" Type="Self.CV_REFERANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_REFERANS">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KULLANICI_FIRMA">
+          <End Role="FIRMA" Type="Self.FIRMA" Multiplicity="0..1" />
+          <End Role="KULLANICI" Type="Self.KULLANICI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KULLANICI">
+              <PropertyRef Name="FIRMA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZGECMIS_KULLANICI">
+          <End Role="KULLANICI" Type="Self.KULLANICI" Multiplicity="1" />
+          <End Role="CV" Type="Self.CV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KULLANICI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="KULLANICI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KariyerModelStoreContainer">
+          <EntitySet Name="CV" EntityType="Self.CV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV_EGITIM" EntityType="Self.CV_EGITIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV_KARIYER" EntityType="Self.CV_KARIYER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV_NITELIK" EntityType="Self.CV_NITELIK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV_REFERANS" EntityType="Self.CV_REFERANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FIRMA" EntityType="Self.FIRMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KULLANICI" EntityType="Self.KULLANICI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CV_EGITIM_CV" Association="Self.FK_CV_EGITIM_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_EGITIM" EntitySet="CV_EGITIM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_KARIYER_CV_KARIYER" Association="Self.FK_CV_KARIYER_CV_KARIYER">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_KARIYER" EntitySet="CV_KARIYER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_NITELIK_CV" Association="Self.FK_CV_NITELIK_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_NITELIK" EntitySet="CV_NITELIK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_REFERANS_CV" Association="Self.FK_CV_REFERANS_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_REFERANS" EntitySet="CV_REFERANS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KULLANICI_FIRMA" Association="Self.FK_KULLANICI_FIRMA">
+            <End Role="FIRMA" EntitySet="FIRMA" />
+            <End Role="KULLANICI" EntitySet="KULLANICI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZGECMIS_KULLANICI" Association="Self.FK_OZGECMIS_KULLANICI">
+            <End Role="KULLANICI" EntitySet="KULLANICI" />
+            <End Role="CV" EntitySet="CV" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KariyerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="KULLANICI_ID" Type="Guid" Nullable="false" />
+          <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="E_POSTA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIGER_EPOSTA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TC_KIMLIK" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DOGUM_TARIH" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FOTOGRAF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UYRUK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CINSIYET" Type="Byte" Nullable="false" />
+          <Property Name="ULKE" Type="Guid" />
+          <Property Name="SEHIR" Type="Guid" />
+          <Property Name="ADRES" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CEP_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIGER_CEP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EV_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IS_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DAHILI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DOGUM_YER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MEDENI_DURUM" Type="Byte" Nullable="false" />
+          <Property Name="ASKERLIK_DURUM" Type="Byte" />
+          <Property Name="TERHIS_TARIH" Type="DateTime" Precision="3" />
+          <Property Name="UYE_TOPLULUKLAR" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SIGARA" Type="Boolean" />
+          <Property Name="SEYEHAT_DURUM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EHLIYET" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HOBILER" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FACEBOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LINKEDIN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TWITTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GOOGLEPLUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DEGISTIREN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DEGISTIRME_TARIH" Type="DateTime" Precision="3" />
+          <Property Name="OLUSTURAN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OLUSTURMA_TARIH" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SILINDI" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CV_EGITIM" Relationship="Self.FK_CV_EGITIM_CV" FromRole="CV" ToRole="CV_EGITIM" />
+          <NavigationProperty Name="CV_KARIYER" Relationship="Self.FK_CV_KARIYER_CV_KARIYER" FromRole="CV" ToRole="CV_KARIYER" />
+          <NavigationProperty Name="CV_NITELIK" Relationship="Self.FK_CV_NITELIK_CV" FromRole="CV" ToRole="CV_NITELIK" />
+          <NavigationProperty Name="CV_REFERANS" Relationship="Self.FK_CV_REFERANS_CV" FromRole="CV" ToRole="CV_REFERANS" />
+          <NavigationProperty Name="KULLANICI" Relationship="Self.FK_OZGECMIS_KULLANICI" FromRole="CV" ToRole="KULLANICI" />
+          <Property Name="CV_BASLIK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MESLEK" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IS_DURUM" Type="Byte" />
+        </EntityType>
+        <EntityType Name="CV_EGITIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CV_ID" Type="Guid" Nullable="false" />
+          <Property Name="EGITIM_DURUM" Type="Byte" Nullable="false" />
+          <Property Name="EGITIM_DURUM_TIP" Type="Byte" Nullable="false" />
+          <Property Name="OKUL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOLUM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OGRETIM_DIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EGITIM_TIP" Type="Byte" />
+          <Property Name="ULKE_AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BASLANGIC_TARIH" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BITIS_TARIH" Type="DateTime" Precision="3" />
+          <Property Name="YAN_ANADAL" Type="Boolean" />
+          <Property Name="CIFT_ANADAL" Type="Boolean" />
+          <Property Name="DIGER_BOLUM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_CV_EGITIM_CV" FromRole="CV_EGITIM" ToRole="CV" />
+        </EntityType>
+        <EntityType Name="CV_KARIYER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CV_ID" Type="Guid" Nullable="false" />
+          <Property Name="FIRMA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="POZISYON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIRMA_YER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SEKTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CALISMA_TIP" Type="Byte" Nullable="false" />
+          <Property Name="CALISMA_DURUM" Type="Byte" Nullable="false" />
+          <Property Name="BASLANGIC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BITIS" Type="DateTime" Precision="3" />
+          <Property Name="AYRILMA_NEDEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DENEYIM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_CV_KARIYER_CV_KARIYER" FromRole="CV_KARIYER" ToRole="CV" />
+        </EntityType>
+        <EntityType Name="CV_NITELIK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CV_ID" Type="Guid" Nullable="false" />
+          <Property Name="NITELIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEVIYE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YIL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_CV_NITELIK_CV" FromRole="CV_NITELIK" ToRole="CV" />
+        </EntityType>
+        <EntityType Name="CV_REFERANS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CV_ID" Type="Guid" Nullable="false" />
+          <Property Name="REFERANS_TIP" Type="Byte" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIRMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="POZISYON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="E_POSTA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_CV_REFERANS_CV" FromRole="CV_REFERANS" ToRole="CV" />
+        </EntityType>
+        <EntityType Name="FIRMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="FIRMA_AD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TELEFON_1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TELEFON_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="E_POSTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIGER_E_POSTA" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="DEGISTIRILME_TARIH" Type="DateTime" Precision="3" />
+          <Property Name="DEGISTIREN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OLUSTURULMA_TARIH" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OLUSTURAN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SILINDI" Type="Boolean" />
+          <NavigationProperty Name="KULLANICI" Relationship="Self.FK_KULLANICI_FIRMA" FromRole="FIRMA" ToRole="KULLANICI" />
+        </EntityType>
+        <EntityType Name="KULLANICI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="FIRMA_ID" Type="Guid" />
+          <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AD_SOYAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="E_POSTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PAROLA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEKNIK_KULLANICI" Type="Boolean" Nullable="false" />
+          <Property Name="FIRMAMI" Type="Boolean" Nullable="false" />
+          <Property Name="AKTIF" Type="Boolean" Nullable="false" />
+          <Property Name="SILINDI" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_OZGECMIS_KULLANICI" FromRole="KULLANICI" ToRole="CV" />
+          <NavigationProperty Name="FIRMA" Relationship="Self.FK_KULLANICI_FIRMA" FromRole="KULLANICI" ToRole="FIRMA" />
+        </EntityType>
+        <Association Name="FK_CV_EGITIM_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_EGITIM" Type="Self.CV_EGITIM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_EGITIM">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_KARIYER_CV_KARIYER">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_KARIYER" Type="Self.CV_KARIYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_KARIYER">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_NITELIK_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_NITELIK" Type="Self.CV_NITELIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_NITELIK">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_REFERANS_CV">
+          <End Role="CV" Type="Self.CV" Multiplicity="1" />
+          <End Role="CV_REFERANS" Type="Self.CV_REFERANS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CV">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV_REFERANS">
+              <PropertyRef Name="CV_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OZGECMIS_KULLANICI">
+          <End Role="KULLANICI" Type="Self.KULLANICI" Multiplicity="1" />
+          <End Role="CV" Type="Self.CV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KULLANICI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="KULLANICI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KULLANICI_FIRMA">
+          <End Role="FIRMA" Type="Self.FIRMA" Multiplicity="0..1" />
+          <End Role="KULLANICI" Type="Self.KULLANICI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KULLANICI">
+              <PropertyRef Name="FIRMA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KariyerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CV" EntityType="Self.CV" />
+          <EntitySet Name="CV_EGITIM" EntityType="Self.CV_EGITIM" />
+          <EntitySet Name="CV_KARIYER" EntityType="Self.CV_KARIYER" />
+          <EntitySet Name="CV_NITELIK" EntityType="Self.CV_NITELIK" />
+          <EntitySet Name="CV_REFERANS" EntityType="Self.CV_REFERANS" />
+          <EntitySet Name="FIRMA" EntityType="Self.FIRMA" />
+          <EntitySet Name="KULLANICI" EntityType="Self.KULLANICI" />
+          <AssociationSet Name="FK_CV_EGITIM_CV" Association="Self.FK_CV_EGITIM_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_EGITIM" EntitySet="CV_EGITIM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_KARIYER_CV_KARIYER" Association="Self.FK_CV_KARIYER_CV_KARIYER">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_KARIYER" EntitySet="CV_KARIYER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_NITELIK_CV" Association="Self.FK_CV_NITELIK_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_NITELIK" EntitySet="CV_NITELIK" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_REFERANS_CV" Association="Self.FK_CV_REFERANS_CV">
+            <End Role="CV" EntitySet="CV" />
+            <End Role="CV_REFERANS" EntitySet="CV_REFERANS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OZGECMIS_KULLANICI" Association="Self.FK_OZGECMIS_KULLANICI">
+            <End Role="KULLANICI" EntitySet="KULLANICI" />
+            <End Role="CV" EntitySet="CV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KULLANICI_FIRMA" Association="Self.FK_KULLANICI_FIRMA">
+            <End Role="FIRMA" EntitySet="FIRMA" />
+            <End Role="KULLANICI" EntitySet="KULLANICI" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KariyerModelStoreContainer" CdmEntityContainer="KariyerEntities">
+          <EntitySetMapping Name="CV">
+            <EntityTypeMapping TypeName="KariyerModel.CV">
+              <MappingFragment StoreEntitySet="CV">
+                <ScalarProperty Name="IS_DURUM" ColumnName="IS_DURUM" />
+                <ScalarProperty Name="MESLEK" ColumnName="MESLEK" />
+                <ScalarProperty Name="CV_BASLIK" ColumnName="CV_BASLIK" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KULLANICI_ID" ColumnName="KULLANICI_ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="E_POSTA" ColumnName="E_POSTA" />
+                <ScalarProperty Name="DIGER_EPOSTA" ColumnName="DIGER_EPOSTA" />
+                <ScalarProperty Name="TC_KIMLIK" ColumnName="TC_KIMLIK" />
+                <ScalarProperty Name="DOGUM_TARIH" ColumnName="DOGUM_TARIH" />
+                <ScalarProperty Name="FOTOGRAF" ColumnName="FOTOGRAF" />
+                <ScalarProperty Name="UYRUK" ColumnName="UYRUK" />
+                <ScalarProperty Name="CINSIYET" ColumnName="CINSIYET" />
+                <ScalarProperty Name="ULKE" ColumnName="ULKE" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="CEP_TEL" ColumnName="CEP_TEL" />
+                <ScalarProperty Name="DIGER_CEP" ColumnName="DIGER_CEP" />
+                <ScalarProperty Name="EV_TEL" ColumnName="EV_TEL" />
+                <ScalarProperty Name="IS_TEL" ColumnName="IS_TEL" />
+                <ScalarProperty Name="DAHILI" ColumnName="DAHILI" />
+                <ScalarProperty Name="DOGUM_YER" ColumnName="DOGUM_YER" />
+                <ScalarProperty Name="MEDENI_DURUM" ColumnName="MEDENI_DURUM" />
+                <ScalarProperty Name="ASKERLIK_DURUM" ColumnName="ASKERLIK_DURUM" />
+                <ScalarProperty Name="TERHIS_TARIH" ColumnName="TERHIS_TARIH" />
+                <ScalarProperty Name="UYE_TOPLULUKLAR" ColumnName="UYE_TOPLULUKLAR" />
+                <ScalarProperty Name="SIGARA" ColumnName="SIGARA" />
+                <ScalarProperty Name="SEYEHAT_DURUM" ColumnName="SEYEHAT_DURUM" />
+                <ScalarProperty Name="EHLIYET" ColumnName="EHLIYET" />
+                <ScalarProperty Name="HOBILER" ColumnName="HOBILER" />
+                <ScalarProperty Name="FACEBOOK" ColumnName="FACEBOOK" />
+                <ScalarProperty Name="LINKEDIN" ColumnName="LINKEDIN" />
+                <ScalarProperty Name="TWITTER" ColumnName="TWITTER" />
+                <ScalarProperty Name="GOOGLEPLUS" ColumnName="GOOGLEPLUS" />
+                <ScalarProperty Name="DEGISTIREN" ColumnName="DEGISTIREN" />
+                <ScalarProperty Name="DEGISTIRME_TARIH" ColumnName="DEGISTIRME_TARIH" />
+                <ScalarProperty Name="OLUSTURAN" ColumnName="OLUSTURAN" />
+                <ScalarProperty Name="OLUSTURMA_TARIH" ColumnName="OLUSTURMA_TARIH" />
+                <ScalarProperty Name="SILINDI" ColumnName="SILINDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CV_EGITIM">
+            <EntityTypeMapping TypeName="KariyerModel.CV_EGITIM">
+              <MappingFragment StoreEntitySet="CV_EGITIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CV_ID" ColumnName="CV_ID" />
+                <ScalarProperty Name="EGITIM_DURUM" ColumnName="EGITIM_DURUM" />
+                <ScalarProperty Name="EGITIM_DURUM_TIP" ColumnName="EGITIM_DURUM_TIP" />
+                <ScalarProperty Name="OKUL" ColumnName="OKUL" />
+                <ScalarProperty Name="BOLUM" ColumnName="BOLUM" />
+                <ScalarProperty Name="OGRETIM_DIL" ColumnName="OGRETIM_DIL" />
+                <ScalarProperty Name="EGITIM_TIP" ColumnName="EGITIM_TIP" />
+                <ScalarProperty Name="ULKE_AD" ColumnName="ULKE_AD" />
+                <ScalarProperty Name="BASLANGIC_TARIH" ColumnName="BASLANGIC_TARIH" />
+                <ScalarProperty Name="BITIS_TARIH" ColumnName="BITIS_TARIH" />
+                <ScalarProperty Name="YAN_ANADAL" ColumnName="YAN_ANADAL" />
+                <ScalarProperty Name="CIFT_ANADAL" ColumnName="CIFT_ANADAL" />
+                <ScalarProperty Name="DIGER_BOLUM" ColumnName="DIGER_BOLUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CV_KARIYER">
+            <EntityTypeMapping TypeName="KariyerModel.CV_KARIYER">
+              <MappingFragment StoreEntitySet="CV_KARIYER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CV_ID" ColumnName="CV_ID" />
+                <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+                <ScalarProperty Name="POZISYON" ColumnName="POZISYON" />
+                <ScalarProperty Name="FIRMA_YER" ColumnName="FIRMA_YER" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="CALISMA_TIP" ColumnName="CALISMA_TIP" />
+                <ScalarProperty Name="CALISMA_DURUM" ColumnName="CALISMA_DURUM" />
+                <ScalarProperty Name="BASLANGIC" ColumnName="BASLANGIC" />
+                <ScalarProperty Name="BITIS" ColumnName="BITIS" />
+                <ScalarProperty Name="AYRILMA_NEDEN" ColumnName="AYRILMA_NEDEN" />
+                <ScalarProperty Name="DENEYIM" ColumnName="DENEYIM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CV_NITELIK">
+            <EntityTypeMapping TypeName="KariyerModel.CV_NITELIK">
+              <MappingFragment StoreEntitySet="CV_NITELIK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CV_ID" ColumnName="CV_ID" />
+                <ScalarProperty Name="NITELIK" ColumnName="NITELIK" />
+                <ScalarProperty Name="SEVIYE" ColumnName="SEVIYE" />
+                <ScalarProperty Name="YIL" ColumnName="YIL" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CV_REFERANS">
+            <EntityTypeMapping TypeName="KariyerModel.CV_REFERANS">
+              <MappingFragment StoreEntitySet="CV_REFERANS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CV_ID" ColumnName="CV_ID" />
+                <ScalarProperty Name="REFERANS_TIP" ColumnName="REFERANS_TIP" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+                <ScalarProperty Name="POZISYON" ColumnName="POZISYON" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="E_POSTA" ColumnName="E_POSTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIRMA">
+            <EntityTypeMapping TypeName="KariyerModel.FIRMA">
+              <MappingFragment StoreEntitySet="FIRMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FIRMA_AD" ColumnName="FIRMA_AD" />
+                <ScalarProperty Name="TELEFON_1" ColumnName="TELEFON_1" />
+                <ScalarProperty Name="TELEFON_2" ColumnName="TELEFON_2" />
+                <ScalarProperty Name="E_POSTA" ColumnName="E_POSTA" />
+                <ScalarProperty Name="DIGER_E_POSTA" ColumnName="DIGER_E_POSTA" />
+                <ScalarProperty Name="DEGISTIRILME_TARIH" ColumnName="DEGISTIRILME_TARIH" />
+                <ScalarProperty Name="DEGISTIREN" ColumnName="DEGISTIREN" />
+                <ScalarProperty Name="OLUSTURULMA_TARIH" ColumnName="OLUSTURULMA_TARIH" />
+                <ScalarProperty Name="OLUSTURAN" ColumnName="OLUSTURAN" />
+                <ScalarProperty Name="SILINDI" ColumnName="SILINDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICI">
+            <EntityTypeMapping TypeName="KariyerModel.KULLANICI">
+              <MappingFragment StoreEntitySet="KULLANICI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FIRMA_ID" ColumnName="FIRMA_ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="AD_SOYAD" ColumnName="AD_SOYAD" />
+                <ScalarProperty Name="E_POSTA" ColumnName="E_POSTA" />
+                <ScalarProperty Name="PAROLA" ColumnName="PAROLA" />
+                <ScalarProperty Name="TEKNIK_KULLANICI" ColumnName="TEKNIK_KULLANICI" />
+                <ScalarProperty Name="FIRMAMI" ColumnName="FIRMAMI" />
+                <ScalarProperty Name="AKTIF" ColumnName="AKTIF" />
+                <ScalarProperty Name="SILINDI" ColumnName="SILINDI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

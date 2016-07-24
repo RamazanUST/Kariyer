@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IsArayan.master.cs" Inherits="Kariyer.Master.IsArayan" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Prism Akademi</title>
+    <meta name="author" content="Sefa Çaksu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="/Content/images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/css/assets.css" />
+    <link id="theme_css" rel="stylesheet" href="/Content/css/light.css" />
+    <link id="skin_css" rel="stylesheet" href="/Content/css/skins/default.css" />
+    <link href="../Content/css/kariyer.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="H" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <div class="page-loader"></div>
+        <div class="pageWrapper">
+            <div class="top-bar main-bg no-border">
+                <div class="container">
+                    <ul class="top-info f-left">
+                        <li><a href="#">Prism Akademi</a></li>
+                        <li><a href="#">Sosyal Sorululuk</a></li>
+                        <li><a href="#">Haberler / Etkinlikler</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">İletişim</a></li>
+                    </ul>
+                    <div class="f-right social-list">
+                        <span class="lbl-txt">Bizi Takip Edin:</span>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Facebook"><i class="fa fa-facebook ic-facebook no-border"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Twitter"><i class="fa fa-twitter ic-twitter no-border"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Linkedin"><i class="fa fa-linkedin ic-linkedin no-border"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Google Plus"><i class="fa fa-google-plus ic-gplus no-border"></i></a>
+                    </div>
+                </div>
+            </div>
+            <header class="top-head header-1 skew">
+                <div class="container">
+                    <div class="logo">
+                        <a href="../Anasayfa.aspx">
+                            <h2 style="font-family: Constantia; font-style: italic; font-weight: bold; color: #26ABFF;">Prism Akademi</h2>
+                        </a>
+                    </div>
+                    <div class="responsive-nav">
+                        <nav class="top-nav">
+                            <ul class="menu">
+                                <li><a href="#"><span>Özet</span></a></li>
+                                <li><a href="../IsArayan/Default.aspx"><span>Öz Geçmişim</span></a></li>
+                                <li><a href="#"><span>Açık Pozisyonlar</span></a></li>
+                                <li><a href="#"><span>Başvurularım</span></a></li>
+                                <li><a href="#"><span>Hesap Bilgileri</span></a></li>
+                            </ul>
+                        </nav>
+                        <div class="f-right">
+                            <div class="top-search">
+                                <a href="#"><span class="fa fa-search"></span></a>
+                                <div class="search-box">
+                                    <input type="text" name="t" placeholder="Açık Pozisyonlar" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="pageContent">
+                <div class="container">
+                    <div class="row row-eq-height">
+                        <div class="col-md-3 p-t-2 p-b-2 lft-cell">
+                            <div class="sidebar-widgets">
+                                <div class="widget">
+                                    <div class="col-md-5">
+                                        <img src="../Content/images/photo.jpg" class="img-responsive" />
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>
+                                            <b>Sefa Çaksu</b>
+                                            <br />
+                                            Yazılım Uzmanı
+                                            <br />
+                                            <a href="#" class="btn-link pull-left" style="font-size: 12px;"><i class="fa fa-camera"></i>&nbsp;Fotoğraf Yükle </a>
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="widget widget-categories p-t-2">
+                                    <h4 class="widget-title"><span class="main-color">Benim Menüm</span></h4>
+                                    <div class="widget-content">
+                                        <ul style="list-style-type: none;">
+                                            <li><a href="../IsArayan/Giris.aspx"><i class="fa fa-pencil text-primary"></i>&nbsp;Özgeçmiş Güncelle</a></li>
+                                            <li><a href=""><i class="fa fa-line-chart text-primary"></i>&nbsp;Anketler</a></li>
+                                            <li><a href=""><i class="fa fa-calendar text-primary"></i>&nbsp;Randevular</a></li>
+                                            <li><a href=""><i class="fa fa-envelope-o text-primary"></i>&nbsp;Mektuplar</a></li>
+                                            <li><a href=""><i class="fa fa-book text-primary"></i>&nbsp;Sınavlar</a></li>
+                                            <li><a href=""><i class="fa fa-users text-primary"></i>&nbsp;Referans Görüşleri</a></li>
+                                            <li><a href=""><i class="fa fa-user-plus text-primary"></i>&nbsp;Arkaaşlarını Davet Et</a></li>
+                                            <li><a href=""><i class="fa fa-power-off text-primary"></i>&nbsp;Güvenli Çıkış</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 p-t-2 p-b-2 main-content">
+                            <asp:ContentPlaceHolder ID="C" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="footWrapper" class="fixed-footer">
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyrights f-left">© <b class="main-color">Code5 Yazılım Otomasyon Sistemleri Ltd. Şti. </b>2016 Code5 Yazılım Tüm Hakları Saklıdır.</div>
+                        <div class="social-list f-right">
+                            <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Facebook"><i class="fa fa-facebook ic-facebook no-border sm-icon"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Twitter"><i class="fa fa-twitter ic-twitter no-border sm-icon"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Linkedin"><i class="fa fa-linkedin ic-linkedin no-border sm-icon"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Google Plus"><i class="fa fa-google-plus ic-gplus no-border sm-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
+    </form>
+    <script type="text/javascript" src="/Content/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/Content/js/assets.js"></script>
+    <script type="text/javascript" src="/Content/js/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var pageName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            $(".menu li").each(function (n) {
+                var aHref = $(this).find("a").attr("href");
+                if (aHref == "../IsArayan/" + pageName) {
+                    $(this).addClass("selected");
+                }
+            });
+
+            $('.step-line').find("a").each(function (n) {
+                var hrf = $(this).attr("href");
+                console.log(hrf + " | " + pageName);
+                if ("../IsArayan/" + pageName == hrf) {
+                    $(this).find("i").removeClass("white-bg");
+                    $(this).find("i").addClass("main-bg");
+                }
+            });
+        });
+
+
+    </script>
+    <asp:ContentPlaceHolder ID="J" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
