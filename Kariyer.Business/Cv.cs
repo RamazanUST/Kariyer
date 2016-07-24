@@ -12,7 +12,7 @@ namespace Kariyer.Business
         {
             try
             {
-                using (UnitOfWork work = new UnitOfWork())
+                using (UnitOfWork work = new UnitOfWork() )
                 {
                     var cv = work.Resolve<ICrud<CV>>().FindById(cvID);
 
