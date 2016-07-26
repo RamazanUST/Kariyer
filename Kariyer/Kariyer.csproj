@@ -119,6 +119,7 @@
     <Content Include="Global.asax" />
     <Content Include="ParolaUnuttum.aspx" />
     <Content Include="ParolaYeni.aspx" />
+    <Content Include="SqlScript\script.sql" />
     <Content Include="Uc\CvDuzenle.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
