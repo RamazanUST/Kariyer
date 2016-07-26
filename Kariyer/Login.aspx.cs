@@ -2,6 +2,7 @@
 using Kariyer.Business;
 using Kariyer.DTO;
 using System;
+using System.Web;
 
 namespace Kariyer
 {
@@ -68,6 +69,14 @@ namespace Kariyer
 
             Session["CurrentUser"] = kullanici.ID;
             Session["CurrentCv"] = kullanici.CV_ID;
+
+            if (this.K_HATIRLA.Checked)
+            {
+                HttpCookie cookie = new HttpCookie("KariyerRememberMe");
+                cookie.Values.Add("UserId", kullanici.ID.ToString());
+                cookie.Expires = DateTime.Now.AddDays(15);
+                Response.Cookies.Add(cookie);
+            }
 
             if (kullanici.FIRMA)
             {
