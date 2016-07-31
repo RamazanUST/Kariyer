@@ -5,12 +5,20 @@ using System;
 
 namespace Kariyer
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : PageHelper
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+                #region Dil
+
+                string email = GetGlobalResourceObject("Genel", "Email").ToString();
+                this.K_EPOSTA.Attributes.Add("placeholder", GetGlobalResourceObject("Genel", "Email").ToString());
+                this.K_PAROLA.Attributes.Add("placeholder", GetGlobalResourceObject("Genel", "Sifre").ToString());
+
+                #endregion
+
                 string kullaniciAktif = this.Request.QueryString["aktif"];
 
                 if (!String.IsNullOrEmpty(kullaniciAktif))

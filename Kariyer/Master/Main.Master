@@ -52,7 +52,7 @@
                             <ul class="menu">
                                 <li><a href="../Anasayfa.aspx"><span>Ana Sayfa</span></a></li>
                                 <li><a href="#"><span>Açık Pozisyonlar</span></a></li>
-                                <li class="mega-menu"><a href="../KullaniciKayit.aspx"><span>Özgeçmiş Bırak</span></a></li>
+                                <li class="mega-menu"><a href="../KullaniciKayit.aspx"><span><%= GetGlobalResourceObject("Genel","OzgecmisBirak") %></span></a></li>
                                 <li><a href="../Login.aspx"><span>Benim Hesabım</span></a></li>
                             </ul>
                         </nav>

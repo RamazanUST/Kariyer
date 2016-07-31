@@ -1,13 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
+using Core;
 
 namespace Kariyer.App_Code
 {
     public class PageHelper : Page
     {
+        protected override void InitializeCulture()
+        {
+            string dil = String.Empty;
+
+            if (Session["dil"] == null)
+            {
+                string dilQuery = Request.QueryString["lng"];
+ 
+                if (!String.IsNullOrEmpty(dilQuery))
+                {
+                    dil = dilQuery;
+                }
+                else
+                {
+                    dil = "tr-Tr";
+                }
+            }
+            else
+            {
+                dil = Session["dil"].ToStringValue();
+            }
+
+            this.Culture = dil;
+            this.UICulture = dil;
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(dil);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dil);
+            base.InitializeCulture();
+        }
+
         public void UserCheck() 
         {
             if (this.IsEmployer.HasValue && this.IsEmployer.Value)

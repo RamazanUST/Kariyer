@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Kariyer.App_Code;
+using System;
 
 namespace Kariyer
 {
-    public partial class Anasayfa : System.Web.UI.Page
+    public partial class Anasayfa : PageHelper
     {
         protected void Page_Load(object sender, EventArgs e)
         {
