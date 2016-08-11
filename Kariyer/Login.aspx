@@ -17,7 +17,7 @@
                             <asp:RegularExpressionValidator ID="R_EPOSTA_CONTROL" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="K_EPOSTA" CssClass="req" ErrorMessage="* Geçersiz e-posta adresi." Display="Dynamic" meta:resourcekey="R_EPOSTA_CONTROLResource1"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox runat="server" ID="K_PAROLA" class="form-control" MaxLength="20" TextMode="Password" meta:resourcekey="K_PAROLAResource1"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="K_PAROLA" class="form-control" MaxLength="20" OnInit="K_PAROLA_Init" TextMode="Password" meta:resourcekey="K_PAROLAResource1"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="R_SIFRE" ControlToValidate="K_PAROLA" Display="Dynamic" CssClass="req" runat="server" ErrorMessage="Şifre boş geçilemez." meta:resourcekey="R_SIFREResource1"></asp:RequiredFieldValidator>
                         </div>
                         <div class="checkbox">
